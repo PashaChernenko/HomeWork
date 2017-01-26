@@ -1,0 +1,90 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.earth {
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	top: 90%;
+	background-color: green;
+	border-radius: 50% 50% 0 0;
+	z-index: 10;
+}
+
+/* Фон, анимация неба */
+
+.bgr {
+	width: 100%;
+	height: 600%;
+	position: fixed;
+	background: linear-gradient(0deg, #6A9AB5 10%, #EF9053 60%, #A3788E 70%, #050937 80%);
+	animation: fon 10s ease-in-out infinite alternate;
+}
+
+@keyframes fon { 
+0%{top: 0%}
+100%{top:-500%}
+}
+
+/* Анимация солнца */
+
+.sun {
+ 	width: 150px;
+ 	height: 150px;
+ 	position: fixed;
+ 	background-color: yellow;
+ 	border-radius: 50%;
+ 	animation: sun 20s ease infinite normal;
+ 	z-index: 9;
+}
+
+@keyframes sun { 
+0%{top: 100%; right: 100%}
+10%{top: 100%; right: 100%; background-color: #AE9583; box-shadow: 0 0 0 #AE9583}
+50%{top: 0%; right: 30%; background-color: #FEFD03; box-shadow: 0 0 300px #FFFFFF; width: 200px; height: 200px}
+60%{top: 0%; right: 30%; background-color: #FEFD03}
+100%{top: 100%; right: -20%; background-color: #FE5400; box-shadow: 0 0 0 #FE5400}
+}
+
+/* Анимация луны */
+
+.moon {
+	width: 120px;
+	height: 120px;
+	position: fixed;
+ 	background-color: #E9E9E9;
+ 	border-radius: 50%;
+ 	animation: moon 20s ease infinite normal;
+ 	z-index: 8;
+}
+
+@keyframes moon { 
+0%{top: 0%; right: 50%; opacity: 1; box-shadow: 0 0 300px #FFFFFF}
+40%{top: 40%; right: 80%; opacity: 0; width: 100px; height: 100px}
+60%{top: 40%; right: -20%; opacity: 0}
+100%{top: 0%; right: 50%; opacity: 1; box-shadow: 0 0 300px #FFFFFF}
+}
+
+/* Анимация звезд */
+
+.star {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	animation: stars 20s linear infinite normal;
+}
+
+.starPng {
+	width: 100%;
+}
+
+@keyframes stars { 
+0%{opacity: 0.6}
+20%{opacity: 0; transform: rotate(-3deg)}
+80%{opacity: 0; transform: rotate(3deg)}
+100%{opacity: 0.6}
+}
