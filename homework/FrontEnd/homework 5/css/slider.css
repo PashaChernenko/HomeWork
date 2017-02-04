@@ -1,0 +1,143 @@
+
+.banner > input {
+	display: none;
+}
+
+.banner_slider {
+	position: relative;
+	overflow: hidden;
+	width: inherit;
+	height: inherit;
+}
+
+.banner_slider_img {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	-webkit-background-size: cover;
+	background-size: cover;
+	left: 100%;
+	/*transition: 1s left;*/ 
+/* 	не додумался как сделать чтобы блок/img выезжал справа а заезжал влево */
+}
+
+.banner_controls {
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	margin-left: -96px; 
+}
+
+.banner_controls label {
+	display: block;
+	height: 4px;
+  width: 54px;
+  background-color: rgb(176,184,185);
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.banner_controls label:hover {
+  background-color: rgb(190,149,144);
+}
+
+#banner_slide-1:checked ~ .banner_controls label:nth-of-type(1),
+#banner_slide-2:checked ~ .banner_controls label:nth-of-type(2),
+#banner_slide-3:checked ~ .banner_controls label:nth-of-type(3) {
+	background-color: rgb(226,83,75);
+}
+
+
+.banner_slider_img-1 {background-image: url(../img/banner1.jpg);}
+.banner_slider_img-2 {background-image: url(../img/banner2.jpg);}
+.banner_slider_img-3 {background-image: url(../img/banner3.jpg);}
+
+#banner_slide-1:checked ~ .banner_slider .banner_slider_img-1,
+#banner_slide-2:checked ~ .banner_slider .banner_slider_img-2,
+#banner_slide-3:checked ~ .banner_slider .banner_slider_img-3 {
+	left: 0;
+	z-index: 1;
+}
+
+.side-banner_controls label {
+	position: absolute;
+	display: block;
+	top: 50%;
+	margin-top: -20px;
+	cursor: pointer;
+  font-size: 40px;
+ 	border-radius: 0px 5px 5px 0px;
+	padding: 0px 0px 5px 10px;
+}
+
+#banner_slide-1:checked ~ .side-banner_controls label:nth-of-type(3),
+#banner_slide-2:checked ~ .side-banner_controls label:nth-of-type(1),
+#banner_slide-3:checked ~ .side-banner_controls label:nth-of-type(2){
+	left: 0;
+	z-index: 2;
+	height: 45px;
+	width: 45px;
+	background-color: rgb(232,100,90);
+	border-bottom: 3px solid rgb(226,83,75);
+}
+
+#banner_slide-1:checked ~ .side-banner_controls label:nth-of-type(2),
+#banner_slide-2:checked ~ .side-banner_controls label:nth-of-type(3),
+#banner_slide-3:checked ~ .side-banner_controls label:nth-of-type(1){
+	right: 0;
+	z-index: 2;
+	transform: rotate(180deg);
+	height: 45px;
+	width: 45px;
+	background-color: rgb(232,100,90);
+	border-top: 3px solid rgb(226,83,75);
+}
+
+.banner_slider_captions > div {
+	position: absolute;
+	top: -9999em;
+	opacity: 0;
+	transition: 1s opacity;
+	z-index: 2;
+}
+
+#banner_slide-1:checked ~ .banner_slider .banner_slider_captions .banner_slider_c1,
+#banner_slide-2:checked ~ .banner_slider .banner_slider_captions .banner_slider_c2,
+#banner_slide-3:checked ~ .banner_slider .banner_slider_captions .banner_slider_c3 {
+	opacity: 1;
+	top: 35%;
+}
+
+.banner_slider_c1, .banner_slider_c2, .banner_slider_c3 {
+	width: 100%;
+	text-align: center;
+}
+
+.banner_slider_captions1 {
+  border-radius: 5px;
+  height: 45px;
+  width: 310px;
+  margin: auto;
+  color: white;
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.banner_slider_captions2 {
+  margin: 8px auto;
+  padding: 12px 28px;
+  border-radius: 5px;
+  height: 65px;
+  width: 425px;
+  color: white;
+  font-size: 15px;
+
+}
+
+.banner_slider_c1 .banner_slider_captions1 {background-color: rgb(226,83,75);}
+.banner_slider_c1 .banner_slider_captions2 {background-color: rgb(63,70,70);}
+.banner_slider_c2 .banner_slider_captions1 {background-color: rgb(255,176,0);}
+.banner_slider_c2 .banner_slider_captions2 {background-color: rgb(255,53,0);}
+.banner_slider_c3 .banner_slider_captions1 {background-color: rgb(255,92,0);}
+.banner_slider_c3 .banner_slider_captions2 {background-color: rgb(185,0,145);}

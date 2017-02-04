@@ -1,167 +1,333 @@
-<!doctype html>
-<html style="width: 100%; height: 100%;">
-<head>
-    <title>Modus Versus</title>
-    <link rel="shortcut icon" href="./img/favicon.ico">
-
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/statistics-overview.css">
-    <link rel="stylesheet" href="css/font_awesome/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" media="screen and (max-width: 767px)" href="css/mobile.css">-->
-    <!--<link rel="stylesheet" media="screen and (min-width: 768px)" href="css/desktop.css">-->
-</head>
-<body>
-
-<header class="flex_align_center">
-    <div class="header_logo">
-        <a href="#" class="header_logo_link">MODUS<span>versus</span></a>
-    </div>
-    <div class="header_menu">
-        <ul class="header_menu_list flex_align_center">
-            <ol class="header_menu_list_select"><a href="#">HOME</a></ol>
-            <ol><a href="#">ABOUT</a></ol>
-            <ol><a href="#">SERVICES</a></ol>
-            <ol><a href="#">PORTFOLIO</a></ol>
-            <ol><a href="#">BLOG</a></ol>
-            <ol><a href="#">FEATURES</a></ol>
-            <ol><a href="#">CONTACTS</a></ol>
-        </ul>
-    </div>
-    <div class="header_search"><i class="fa fa-search" style="color: white" aria-hidden="true"></i></div>
-</header>
-<div class="header-fix flex_align_center">
-    <div class="header-fix_height" style="width: 507px;"></div>
-    <div class="header-fix_height" style="width: 640px;"></div>
-    <div class="header-fix_height" style="width: 200px;"></div>
+<!DOCTYPE html>
+<!-- 
+Доброговремени суток! По недоработкам... 
+1. Не смог заставить карусель правильно анимироваться (картинки выезжант только с одной стороны)
+2. Понятия не имею как сделать тень от центрального окна картинки
+3. Пытался победить симантичную линейку (нижняя рамка heder...) сделать с помощъю дивов, дабы можно было ее маштабировать, менять цвет, копировать и т.д. По моему методу получается +100500 дивов, что, по моим подозрениям, не совсем пранильно.
+<div class="border_header">
+  <div class="border1"></div>
+  <div class="border1"></div>
+  <div class="border2"></div>
+  <div class="border1"></div>
+  <div class="border1"></div>
 </div>
+
+.border_header {
+    display: flex;
+    justify-content: space-between;
+    height: 7px;
+    width: 20px;
+    transform: rotate(180deg);
+}
+
+.border_header > .border1 {
+    background-color: rgba(127,140,140,0.5);
+    height: 70%;
+    width: 4%;
+    min-width: 1px;
+}
+
+.border_header > .border2 {
+    background-color: rgba(127,140,140,0.5);
+    height: 100%;
+    width: 7%;
+    min-width: 2px;
+}
+4. Еще много, много, много... 
+
+Жду ваших замечаний.
+
+Не судите строго....-->
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<title>Modus Versus</title>
+	<link rel="stylesheet" href="font/font_Open-Sans/opensans.css">
+	<link rel="stylesheet" href="font/font_awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slider.css">
+</head>
+
+<body>
+<div class="header-fix">
+	<div class="header flex_align">
+		<div class="logo">
+			<a href="#">MODUS<span>versus</span></a>
+		</div>
+		<div class="header_btn">
+			<button class="header_btn_active">HOME</button>
+			<button>ABOUT</button>
+		</div>
+		<div class="header_menu">
+      <li><a href="#">SERVICES</a></li>
+      <li class="header_menu_list">
+        <a href="#"><i class="fa fa-angle-down fa-angle-down1" aria-hidden="true"></i>PORTFOLIO</a>
+        <div class="header_menu_list_PORTFOLIO">
+        	<div class="triangle"></div>
+        	<ol>
+        		<li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Portfolio 1 column page</a></li>
+        		<li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Portfolio 2 column page</a></li>
+        		<li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Portfolio 3 column page</a></li>
+        	</ol>
+        </div>
+      </li>
+      <li><a href="#">BLOG</a></li>
+      <li><a href="#">FEATURES</a></li>
+      <li><a href="#">CONTACTS</a></li>
+		</div>
+		<div class="header_search">
+			<input  class="header_search_input" type="text"><i class="fa fa-search" aria-hidden="true"></i>
+		</div>
+	</div>
+</div>
+
 
 <div class="content">
-    <div>
-        <div class="banner flex_align_center">
-            <div class="banner_previous_btn banner_nav_btn"></div>
-            <div class="banner_slide"></div>
-            <div class="banner_next_btn banner_nav_btn"></div>
+  <div class="banner">
+    <input type="radio" name="banner_slides" id="banner_slide-1">
+    <input type="radio" name="banner_slides" id="banner_slide-2" checked>
+    <input type="radio" name="banner_slides" id="banner_slide-3">
+    <div class="banner_slider">
+      <div class="banner_slider_captions">
+        <div class="banner_slider_c1">
+          <div class="banner_slider_captions1">VESTIBULUM</div>
+          <div class="banner_slider_captions2">Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commobo.</div>
         </div>
-        <div class="banner_nav flex_align_center">
-            <div class="banner_nav_id"></div>
-            <div class="banner_nav_id banner_nav_id_active"></div>
-            <div class="banner_nav_id"></div>
+        <div class="banner_slider_c2">
+          <div class="banner_slider_captions1">VESTIBULUM</div>
+          <div class="banner_slider_captions2">Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commobo.</div>
         </div>
+        <div class="banner_slider_c3">
+          <div class="banner_slider_captions1">VESTIBULUM</div>
+          <div class="banner_slider_captions2">Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commobo.</div>
+        </div>
+      </div>
+      <div class="banner_slider_img banner_slider_img-1"></div>
+      <div class="banner_slider_img banner_slider_img-2"></div>
+      <div class="banner_slider_img banner_slider_img-3"></div>
     </div>
-    <div class="propose">
-        <div class="propose_link"></div>
-        <div class="propose_main_unit flex_align_center">
-            <div class="propose_block"></div>
-            <div class="propose_block"></div>
-            <div class="propose_block"></div>
-            <div class="propose_block"></div>
-        </div>
+    <div class="banner_controls">
+      <label for="banner_slide-1"></label>
+      <label for="banner_slide-2"></label>
+      <label for="banner_slide-3"></label>
     </div>
-    <div class="main-content">
-        <div class="main-content_title">
-            <h2>WHY MODUS VERSUS?</h2>
-            <p>Capacitance cascading integer reflective interfce data development high bus cache dithering transpondes</p>
-        </div>
-        <div class="main-content_image flex_align_center">
-            <div class="main-content_image_left">
-                <div class="main-content_image_header flex_align_center">
-                    <div class="main-content_image_header_circle flex_align_center">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="main-content_image_header_clasp"></div>
-                </div>
-                <div class="main-content_image_img"></div>
-            </div>
-            <div class="main-content_image_center">
-                <div class="main-content_image_header flex_align_center">
-                    <div class="main-content_image_header_circle flex_align_center">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="main-content_image_header_clasp"></div>
-                </div>
-                <div class="main-content_image_img"></div>
-            </div>
-            <div class="main-content_image_right">
-                <div class="main-content_image_header flex_align_center">
-                    <div class="main-content_image_header_circle flex_align_center">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="main-content_image_header_clasp"></div>
-                </div>
-                <div class="main-content_image_img"></div>
-            </div>
-        </div>
-        <div class="company-statistics flex_align_center">
-            <div class="company-statistics_list"></div>
-            <div class="company-statistics_info"></div>
-            <div class="company-statistics_message"></div>
-        </div>
-        <div class="client-base">
-            <div class="client-base_scroll"></div>
-            <div class="client-base_foto">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+    <div class="side-banner_controls">
+      <label for="banner_slide-1"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
+      <label for="banner_slide-2"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
+      <label for="banner_slide-3"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
     </div>
+  </div>
 
-    <div class="company-year-statistics-overview">
-        <div class="statistics-overview">
-            <div class="statistics-overview_progress-bar">
-                <!-- rotationAngle = 180 * 0.5 = 90-->
-                <div class="statistics-overview_progress-bar-arc" style="transform: rotate(90deg);"></div>
-            </div>
-            <div class="statistics-overview_progress-number">50</div>
-            <div class="statistics-overview_progress-label">SUSPENDISSE</div>
-        </div>
-        <div class="statistics-overview">
-            <div class="statistics-overview_progress-bar">
-                <!-- rotationAngle = 180 * 0.7 = 126-->
-                <div class="statistics-overview_progress-bar-arc" style="transform: rotate(126deg);"></div>
-            </div>
-            <div class="statistics-overview_progress-number">70</div>
-            <div class="statistics-overview_progress-label">MAECENAS</div>
-        </div>
-        <div class="statistics-overview">
-            <div class="statistics-overview_progress-bar">
-                <!-- rotationAngle = 180 * 0.8 = 144-->
-                <div class="statistics-overview_progress-bar-arc" style="transform: rotate(144deg);"></div>
-            </div>
-            <div class="statistics-overview_progress-number">80</div>
-            <div class="statistics-overview_progress-label">ALIQUAM</div>
-        </div>
-        <div class="statistics-overview">
-            <div class="statistics-overview_progress-bar">
-                <!-- rotationAngle = 180 * 1 = 180-->
-                <div class="statistics-overview_progress-bar-arc" style="transform: rotate(180deg);"></div>
-            </div>
-            <div class="statistics-overview_progress-number">100</div> <!--26px; #rgb(130,130,130)-->
-            <div class="statistics-overview_progress-label">HABITASSE</div> <!--18px; #rgb(130,130,130)-->
-        </div>
+  <div class="services">
+    <div class="services_link flex_align">
+      <div class="services_link_text"><h2>Some of our top services</h2><p>Ut eleifend libero sed neque rhouncus consequat. Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.</p></div>
+      <button class="btn">VIEW MORE</button>
     </div>
+    <div class="services_main-unit flex_align">
+      <div class="services_block">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <h3>SUSPENDISSE</h3>
+        <p>Quisque id tellus quis risus vehicula vehicula ut turpis. In eros nulla, placerat vitae at, vehicula ut nunc.</p>
+        <button class="services_block_btn btn">read more</button>
+      </div>
+      <div class="services_block">
+        <i class="fa fa-key" aria-hidden="true"></i>
+        <h3>MAECENAS</h3>
+        <p>Ut eleifend libero sed neque rhoncus consequat. Maecenas tincidunt, augue et rutrum condimentum, libero lectus mattis orci, ut commodo.</p>
+        <button class="services_block_btn btn">read more</button>
+      </div>
+      <div class="services_block">
+        <i class="fa fa-flag" aria-hidden="true"></i>
+        <h3>ALIQUAM</h3>
+        <p>Vivamus eget ante bibendum arcu vehicula ultricies. Integer venenatis mattis nisl, vitae pulvinar dui tempor non. </p>
+        <button class="services_block_btn btn">read more</button>
+      </div>
+      <div class="services_block">
+        <i class="fa fa-flask" aria-hidden="true"></i>
+        <h3>HABITASSE</h3>
+        <p>Astehicula ultricies. Integer venenatis mattis nisl, vitae pulvinar dui tempor non. </p>
+        <button class="services_block_btn btn">read more</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content_title">
+      <h2>WHY MODUS VERSUS?</h2>
+      <p>Capacitance cascading integer reflective interfce data development high bus cache dithering transpondes</p>
+    </div>
+    <div class="main-content_image flex_align">
+      <div class="main-content_image_left">
+        <div class="main-content_image_header flex_align">
+          <div class="main-content_image_header_circle flex_align">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="main-content_image_header_clasp"></div>
+        </div>
+        <div class="main-content_image_img"></div>
+      </div>
+      <div class="main-content_image_center">
+        <div class="main-content_image_header flex_align">
+          <div class="main-content_image_header_circle flex_align">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="main-content_image_header_clasp"></div>
+        </div>
+        <div class="main-content_image_img"></div>
+      </div>
+      <div class="main-content_image_right">
+        <div class="main-content_image_header flex_align">
+          <div class="main-content_image_header_circle flex_align">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="main-content_image_header_clasp"></div>
+        </div>
+        <div class="main-content_image_img"></div>
+      </div>
+    </div>
+    <div class="company-statistics">
+      <div class="company-statistics_list">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Quisque at massa ipsum</li>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Maecenas alorem aurue, egestas</li>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Cras vitae felis at lacus eleifend</li>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Etiam auctor diam pellentesque</li>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Nulla ac massa at dolor</li>
+          <li><i class="fa fa-arrow-right" aria-hidden="true"></i> Condimentum eleifend vitae vitae</li>
+        </ul>
+      </div>
+      <div class="company-statistics_info">
+        <p>Curabitur quis nisl in euismod venenatis eu in diam. Etiam auctor diam pellentesque lectus <a href="#">vehicula mattis</a>. Nulla ac massa at dolor condimentum eleifend vitae vitae urna</p>
+        <div class="company-statistics_overview flex_align">
+          <div class="company-statistics_overview_block">
+            <div class="company-statistics_overview_progress" style="transform: rotate(45deg);"></div>
+            <div class="statistics-overview_progress_numder">50</div>
+            <div class="statistics-overview_progress-label"><h3>SUSPENDISSE</h3></div>
+          </div>
+          <div class="company-statistics_overview_block">
+            <div class="company-statistics_overview_progress" style="transform: rotate(90deg);"></div>
+            <div class="statistics-overview_progress_numder">70</div>
+            <div class="statistics-overview_progress-label"><h3>MAECENAS</h3></div>
+          </div>
+          <div class="company-statistics_overview_block">
+            <div class="company-statistics_overview_progress" style="transform: rotate(105deg);"></div>
+            <div class="statistics-overview_progress_numder">80</div>
+            <div class="statistics-overview_progress-label"><h3>ALIQUAM</h3></div>
+          </div>
+          <div class="company-statistics_overview_block">
+            <div class="company-statistics_overview_progress" style="transform: rotate(135deg);"></div>
+            <div class="statistics-overview_progress_numder">100</div>
+            <div class="statistics-overview_progress-label"><h3>HABITASSE</h3></div>
+          </div>
+        </div>
+      </div>
+      <div class="company-statistics_message">
+        <h3>What Client's Say?</h3>
+        <div class="company-statistics_message_talkbubble">Curabitur quis nisl in leo euismod venenatis eu in diam. etiam auctor diam pellentesque lectus vehicula mattis. nulla ac massa at dolor condimentum
+        </div>
+        <div class="company-statistics_message_talkbubble_triangle"></div>
+        <h3>Jhon Doe</h3>
+      </div>
+    </div>
+    <div class="client-base">
+      <div class="client-base_scroll flex_align">
+        <div><h3>Our Heppy Clients</h3></div>
+        <div class="client-base_scroll_dec">
+          <div class="client-base_scroll_dec_circle"></div>
+          <div class="client-base_scroll_dec_line"></div>
+        </div>
+        <div class="client-base_scroll_btn"><button class="btn"><i class="fa fa-angle-left" aria-hidden="true"></i></button><button class="btn"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+      </div>
+      <div class="client-base_foto flex_align">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<footer class="footer">
-    <div class="footer_navigation">
-        About me!
+
+<div class="footer">
+  <div class="footer_cont flex_align">
+    <div class="footer_cont_contacs">
+      <div class="logo">
+        <a href="#">MODUS<span>versus</span></a>
+      </div>
+      <div class="footer_cont_contacs_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec.</div>
+      <div class="footer_cont_contacs_communication">
+        Phone: <span>182 2569 5896</span><br>
+        e-mail: <span>info@modu.versus</span>
+      </div>
     </div>
-    <div class="footer_social-networks">
-        Social Networks: ...
+    <div class="footer_cont_about">
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>About</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>FAQ</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Contact</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Terms</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Privacy</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Testimonials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Blog</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Forum</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Support</a></li>
+          <li><a href="#"><i class="fa fa-angle-down fa-angle-down2" aria-hidden="true"></i>Newsletter</a></li>
+        </ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </div>
     </div>
-</footer>
+    <div class="footer_cont_blog">
+      <span>from the </span> BLOG
+      <div class="footer_cont_blog_form flex_align">
+        <div class="footer_cont_blog_form_icons"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+        <div class="footer_cont_blog_form_comments">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+          <span>26 May, 2013</span>
+        </div>
+      </div>
+      <div class="footer_cont_blog_form flex_align">
+        <div class="footer_cont_blog_form_icons"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+        <div class="footer_cont_blog_form_comments">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+          <span>26 May, 2013</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="futer_bottom flex_align">
+    <div class="futer_bottom_copyright">2013 ModusVersus</div>
+    <div class="futer_bottom_icons">
+      <a href="#"><img src="img/facebook.png" alt=""></a>
+      <a href="#"><img src="img/g-plus.png" alt=""></a>
+      <a href="#"><img src="img/twiter.png" alt=""></a>
+      <a href="#"><img src="img/rss.png" alt=""></a>
+    </div>
+  </div>
+</div>
+
 </body>
+
 </html>
